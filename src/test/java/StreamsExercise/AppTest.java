@@ -17,14 +17,16 @@ public class AppTest extends TestCase {
     }
 
     public void testReturnUppercaseAndConcatenatedStringWithoutMap() {
-        assertEquals("HIHELLOSHALOMTOV", app.transformUppercaseAndConcatenateWithoutMap(words).orElse("moi"));
+        assertEquals("HIHELLOSHALOMTOV", app.transformUppercaseAndConcatenateWithoutMap(words).get());
     }
 
     public void testReturnUppercaseAndConcatenatedStringWithMap() {
-        assertEquals("HIHELLOSHALOMTOV", app.transformUppercaseAndConcatenateWithMap(words).orElse("moi"));
+        assertEquals("HIHELLOSHALOMTOV", app.transformUppercaseAndConcatenateWithMap(words).get());
     }
 
-
+    public void testConcatenateWithCommas() {
+        assertEquals("hi,hello,shalom,tov", app.concatenateWithCommas(words).get());
+    }
 
     public void thisShouldNotBeCalled() {
         assertTrue(false);
